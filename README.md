@@ -32,8 +32,8 @@ A complete web-based Leave Management System built with PHP 8.x, MySQL, HTML5, B
 
 ## Requirements
 
-- PHP 8.0 or higher
-- MySQL 5.7+ or MariaDB 10.4+
+- PHP 8.2 or higher
+- MySQL 5.7+
 - Apache with mod_rewrite or Nginx
 - XAMPP / WAMP / LAMP / MAMP (for local development)
 
@@ -54,12 +54,12 @@ Linux:  /var/www/html/leave_management/
 ### Step 2: Create the Database
 
 1. Open **phpMyAdmin** or any MySQL client.
-2. Create a new database named `leave_management`.
+2. Create a new database named `emp_leave_management`.
 3. Import the SQL file:
 
 ```sql
 -- Option A: Via phpMyAdmin
--- Select database → Import → Choose file: sql/leave_management.sql
+-- Select database → Import → Choose file: sql/emp_leave_management.sql
 
 -- Option B: Via terminal
 mysql -u root -p leave_management < sql/leave_management.sql
@@ -73,7 +73,7 @@ Edit `config/db.php` with your credentials:
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');       // your MySQL username
 define('DB_PASS', '');           // your MySQL password
-define('DB_NAME', 'leave_management');
+define('DB_NAME', 'emp_leave_management');
 ```
 
 ### Step 4: Set Application URL
@@ -103,11 +103,9 @@ http://localhost/leave_management/
 
 | Role     | Email                    | Password   |
 |----------|--------------------------|------------|
-| Admin    | admin@company.com        | password   |
-| Manager  | manager@company.com      | password   |
-| Employee | employee@company.com     | password   |
-
-> **Note:** Passwords are stored as bcrypt hashes. The test password is `password`.
+| Admin    | admin@gmail.com          | User1234   |
+| Manager  | john@gmail.com           | User1234   |
+| Employee | rohit@gmail.com          | User1234   |
 
 ---
 
@@ -152,7 +150,7 @@ leave_management/
 │   ├── css/style.css           # Custom stylesheet
 │   └── js/app.js               # AJAX helpers, date logic, DataTables
 └── sql/
-    └── leave_management.sql    # Full database schema + seed data
+    └── emp_leave_management.sql    # Full database schema + seed data
 ```
 
 ---
@@ -186,20 +184,6 @@ leave_management/
 
 ---
 
-## Assumptions Made
-
-1. Leave balance is tracked **per calendar year**.
-2. Leave days are **calendar days** (weekends included).
-3. **All managers** can see and action **all employee** leave requests.
-4. When a new leave type is added, balances are automatically assigned to all active users.
-5. When a manager **approves** a leave, the balance is deducted immediately.
-6. If a leave is **rejected**, the balance is NOT deducted (only approved leaves affect balance).
-7. Users cannot physically be deleted — only set to Active/Inactive.
-8. The application URL must be updated in `config/app.php` to match your local server path.
-9. CDN links are used for Bootstrap, jQuery, Chart.js, and DataTables (internet connection required).
-
----
-
 ## Security Features
 
 - Passwords hashed with `bcrypt` (cost factor 12)
@@ -211,7 +195,3 @@ leave_management/
 - HTTPOnly session cookies
 
 ---
-
-## Developer
-
-Built as part of Optipace Technologies Technical Assessment — June 2026.
