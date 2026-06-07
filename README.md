@@ -196,6 +196,20 @@ leave_management/
 
 ---
 
+## Assumptions Made
+
+1. Leave balance is tracked **per calendar year**.
+2. Leave days are **calendar days** (weekends included).
+3. **All managers** can see and action **all employee** leave requests.
+4. When a new leave type is added, balances are automatically assigned to all active users.
+5. When a manager **approves** a leave, the balance is deducted immediately.
+6. If a leave is **rejected**, the balance is NOT deducted (only approved leaves affect balance).
+7. Users cannot physically be deleted — only set to Active/Inactive.
+8. The application URL must be updated in `config/app.php` to match your local server path.
+9. CDN links are used for Bootstrap, jQuery, Chart.js, and DataTables (internet connection required).
+
+---
+
 ## Security Features
 
 - Passwords hashed with `bcrypt` (cost factor 12)
