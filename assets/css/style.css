@@ -1,0 +1,80 @@
+:root {
+  --primary: #1e3a5f;
+  --primary-light: #2d6a9f;
+  --success: #198754;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+body {
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Stat Cards */
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform .2s, box-shadow .2s;
+  overflow: hidden;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.stat-card .icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+}
+.stat-card .stat-number { font-size: 2rem; font-weight: 700; }
+
+/* Page titles */
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-left: 4px solid var(--primary-light);
+  padding-left: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tables */
+.table th { background: #f8fafc; font-weight: 600; color: #374151; font-size: .85rem; }
+.table td { vertical-align: middle; }
+
+/* Status badges */
+.badge-pending  { background: #fff3cd; color: #856404; }
+.badge-approved { background: #d1e7dd; color: #0f5132; }
+.badge-rejected { background: #f8d7da; color: #842029; }
+
+/* Form card */
+.form-card {
+  background: #fff;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 16px rgba(0,0,0,.07);
+  padding: 2rem;
+}
+
+/* Sidebar (for future use) */
+.card { border-radius: 12px; border: none; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.card-header { font-weight: 600; border-radius: 12px 12px 0 0 !important; }
+
+/* Alerts */
+.alert { border-radius: 8px; }
+
+/* DataTables tweaks */
+.dataTables_wrapper .dataTables_filter input { border-radius: 8px; border: 1px solid #ced4da; padding: .35rem .75rem; }
+.dataTables_wrapper .dataTables_length select { border-radius: 8px; border: 1px solid #ced4da; }
+
+/* Loading overlay */
+#loadingOverlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.35); z-index: 9999;
+  align-items: center; justify-content: center;
+}
+#loadingOverlay.show { display: flex; }
+.spinner-box { background: #fff; border-radius: 12px; padding: 2rem 3rem; text-align: center; }
