@@ -113,44 +113,56 @@ http://localhost/leave_management/
 
 ```
 leave_management/
-├── index.php                   # Login page
-├── logout.php                  # Logout handler
-├── dashboard.php               # Role-based dashboard router
+├── index.php                                   # Login page
+├── logout.php                                  # Logout handler
+├── dashboard.php                               # Role-based dashboard router
+├── screenshots/
+│   ├── login_page.png                          # Login page 
+│   ├── employee_dashboard.png                  # Employer Side Dashboard page              
+│   ├── apply_leave_page.png                    # Employer Leave Apply Page 
+│   ├── employee_leave_history.png              # Employer Leave History Page
+│   ├── manager_dashboard.png                   # Manager Dashbaord page
+│   ├── pending_request_page.png                # Pending Leave Request page 
+│   ├── admin_dashboard.png                     # Admin side Dashboard page
+│   ├── users_page.png                          # Users List page
+│   ├── add_user_page.png                       # Admin side add user page
+│   ├── leave_config_page.png                   # Leave Configuration page
+│   ├── admin_report_page.png                   # Total Leave report page
 ├── config/
-│   ├── app.php                 # App config, helpers, session management
-│   └── db.php                  # PDO database connection
+│   ├── app.php                                 # App config, helpers, session management
+│   └── db.php                                  # PDO database connection
 ├── includes/
-│   ├── header.php              # Shared navbar & HTML head
-│   └── footer.php              # Shared footer & JS includes
+│   ├── header.php                              # Shared navbar & HTML head
+│   └── footer.php                              # Shared footer & JS includes
 ├── modules/
 │   ├── employee/
-│   │   ├── dashboard.php       # Employee home with stats & balances
-│   │   ├── apply_leave.php     # Leave application form
-│   │   └── leave_history.php   # Leave history with filters
+│   │   ├── dashboard.php                       # Employee home with stats & balances
+│   │   ├── apply_leave.php                     # Leave application form
+│   │   └── leave_history.php                   # Leave history with filters
 │   ├── manager/
-│   │   ├── dashboard.php       # Manager home with quick approve/reject
-│   │   └── pending_requests.php# All leave requests with full actions
+│   │   ├── dashboard.php                       # Manager home with quick approve/reject
+│   │   └── pending_requests.php                # All leave requests with full actions
 │   └── admin/
-│       ├── dashboard.php       # Admin home with charts
-│       ├── users.php           # User list with AJAX search
-│       ├── create_user.php     # Create new user
-│       ├── leave_config.php    # Manage leave types & quotas
-│       └── reports.php         # Leave reports with CSV export
+│       ├── dashboard.php                       # Admin home with charts
+│       ├── users.php                           # User list with AJAX search
+│       ├── create_user.php                     # Create new user
+│       ├── leave_config.php                    # Manage leave types & quotas
+│       └── reports.php                         # Leave reports with CSV export
 ├── ajax/
-│   ├── apply_leave.php         # Submit leave application
-│   ├── update_leave_status.php # Approve / reject leave
-│   ├── search_users.php        # Live user search
-│   ├── get_user.php            # Fetch user data for edit
-│   ├── create_user.php         # Create user
-│   ├── update_user.php         # Update user
-│   ├── toggle_user_status.php  # Activate / deactivate user
-│   ├── update_leave_type.php   # Edit leave type
-│   └── add_leave_type.php      # Add new leave type
+│   ├── apply_leave.php                         # Submit leave application
+│   ├── update_leave_status.php                 # Approve / reject leave
+│   ├── search_users.php                        # Live user search
+│   ├── get_user.php                            # Fetch user data for edit
+│   ├── create_user.php                         # Create user
+│   ├── update_user.php                         # Update user
+│   ├── toggle_user_status.php                  # Activate / deactivate user
+│   ├── update_leave_type.php                   # Edit leave type
+│   └── add_leave_type.php                      # Add new leave type
 ├── assets/
-│   ├── css/style.css           # Custom stylesheet
-│   └── js/app.js               # AJAX helpers, date logic, DataTables
+│   ├── css/style.css                           # Custom stylesheet
+│   └── js/app.js                               # AJAX helpers, date logic, DataTables
 └── sql/
-    └── emp_leave_management.sql    # Full database schema + seed data
+    └── emp_leave_management.sql                # Full database schema + seed data
 ```
 
 ---
